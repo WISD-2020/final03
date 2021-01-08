@@ -17,9 +17,9 @@ class CreateDetailsTable extends Migration
             $table->increments('id');
             $table->integer('order_id');
             $table->integer('meals_id');
-            $table->integer('price');
+            $table->integer('total');
             $table->string('quantity');
-            $table->boolean('status');
+            $table->string('status');
             $table->string('method');
             $table->timestamps();
         });

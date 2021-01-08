@@ -13,11 +13,11 @@ class order extends Model
     protected $fillable = [
         'id',
         'meals_id',
-        'total',
+        'price',
         'quantity',
         'status',
-        'method',
     ];
+
 
     public function meals()
     {

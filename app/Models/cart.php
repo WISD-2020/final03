@@ -13,7 +13,7 @@ class cart extends Model
     protected $fillable = [
         'id',
         'meals_id',
-        'price',
+        'total',
         'quantity',
         'status'
     ];
@@ -24,5 +24,9 @@ class cart extends Model
     public function order()
     {
         $this->hasMany(order::class);
+    }
+    public function cart()
+    {
+        $this->hasMany(cart::class);
     }
 }

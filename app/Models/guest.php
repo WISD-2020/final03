@@ -13,6 +13,6 @@ class guest extends Model
     ];
     public function order()
     {
-        $this->hasMany(order::class);
+        $this->hasone(order::class);
     }
 }
