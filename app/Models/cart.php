@@ -17,6 +17,10 @@ class cart extends Model
         'quantity',
         'status'
     ];
+    /**
+     * @var mixed
+     */
+
     public function order()
     {
         $this->hasMany(order::class);
