@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,7 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', [HomeController::class, 'index'])->name('menu.index');
-Route::get('menu/cart', [HomeController::class, 'cart'])->name('menu.cart');
+
+Route::post('cartlist',[CartController::class, 'index'])->name('cart.index');
+Route::delete('/cartlist/{id}',[CartController::class,'destroy'])->name('cart.destroy');
+Route::post('/checkout',[CartController::class, 'store'])->name('cart.store');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

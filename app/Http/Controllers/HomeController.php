@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\cart;
 use App\Models\meal;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -15,15 +16,5 @@ class HomeController extends Controller
             'meals' => $meals
             ];
         return view('menu.index',$data);
-    }
-    public function cart(Request $request)
-    {
-        $cart = new Cart();
-        $cart->meals_id =$request->id;
-        $cart->price = $request->price;
-        $cart->quantity = $request->input('quantity');
-        $cart->status =$request->input('status');
-        $cart->save();
-        return redirect()->route('menu.cart');
     }
 }
