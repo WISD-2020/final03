@@ -17,6 +17,7 @@ class CreateOrdersTable extends Migration
             $table->increments('id');
             $table->integer('meals_id');
             $table->integer('price');
+            $table->string('name');
             $table->string('quantity');
             $table->string('status');
             $table->timestamps();
