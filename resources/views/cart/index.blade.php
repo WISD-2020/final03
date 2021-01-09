@@ -28,6 +28,7 @@
                 <th width="20"></th>
                 <th width="100"></th>
                 <th>餐點編號</th>
+                <th>名稱</th>
                 <th>數量</th>
                 <th class="text-center" width="120">小計</th>
             </tr>
@@ -45,15 +46,12 @@
                     <td class="align-middle">
                     </td>
                     <td class="align-middle "> {{$order->meals_id}}</td>
+                    <td class="align-middle "> {{$order->name}}</td>
                     <td class="align-middle">{{$order->quantity}}</td>
                     <td class="align-middle text-right">${{($order->quantity)*($order->price)}}</td>
             </tr>
         @endforeach
-
-        <tr class="text-right">
-            <td colspan="4"><strong>合計</strong></td>
-            <td><strong>${{($order->quantity)*($order->price)}}</strong></td>
-        </tr>
+        
     </table>
 
     <div class="mt-3 d-flex justify-content-end">

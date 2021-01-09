@@ -37,7 +37,8 @@
             <option value="8">8</option>
         </select>
                 <input type="hidden" name="meals_id" value="{{$meal->id}}">
-                 <input type="hidden" name="price" value="{{$meal->price}}">
+                <input type="hidden" name="price" value="{{$meal->price}}">
+                <input type="hidden" name="name" value="{{$meal->name}}">
                 <button type="submit" onclick="return confirm('確定加入購物車?')" >加入購物車</button>
         </form>
     @endforeach

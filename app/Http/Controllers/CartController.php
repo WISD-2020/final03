@@ -15,6 +15,7 @@ class CartController extends Controller
         $order = new order();
         $order->meals_id = $request->input('meals_id');
         $order->price = $request->input('price');
+        $order->name = $request->input('name');
         $order->quantity = $request->input('quantity');
         $order->status = "未完成";
         $order->save();
