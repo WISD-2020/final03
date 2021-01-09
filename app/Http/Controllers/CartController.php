@@ -19,7 +19,7 @@ class CartController extends Controller
         $order->quantity = $request->input('quantity');
         $order->status = "未完成";
         $order->save();
-        $meals = order::orderBy('id', 'ASC')->paginate(6);
+        $meals = order::orderBy('id', 'ASC')->paginate(20);
         $data = [
             'meals' => $meals
         ];

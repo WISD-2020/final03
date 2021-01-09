@@ -31,27 +31,24 @@
                     <thead>
                     <tr>
                         <th  style="text-align: center">訂單編號</th>
-                        <th >會員編號</th>
-                        <th  style="text-align: center">餐點名稱/數量</th>
+                        <th  style="text-align: center">餐點名稱</th>
+                        <th  style="text-align: center">數量</th>
                         <th  style="text-align: center">總金額</th>
                         <th  style="text-align: center">訂單狀態</th>
-                        <th  style="text-align: center">方法</th>
-                        <th  style="text-align: center">功能</th>
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($orderlists as $orderlist)
+                    @foreach($meals as $meal)
                         <tr>
-                            <td style="text-align: center">{{ $orderlist->orderlists_id }}</td>
-                            <td>{{$orderlist->users_id}}</td>
-                            <td style="text-align: center">{{$orderlist->name}}</td>
-                            <td style="text-align: center">{{$orderlist->total}}</td>
-                            <td style="text-align: center">{{$orderlist->status}}</td>
-                            <td style="text-align: center">{{$orderlist->method}}</td>
+                            <td style="text-align: center">{{$meal->id }}</td>
+                            <td style="text-align: center">{{$meal->name}}</td>
+                            <td style="text-align: center">{{$meal->quantity}}</td>
+                            <td style="text-align: center">{{$meal->total}}</td>
+                            <td style="text-align: center">{{$meal->status}}</td>
                             <td>
-                                <a class="btn btn-sm btn-primary" href="{{ route('admin.orderlists.edit', $orderlist->orderlists_id) }}">編輯</a>
+                                <a class="btn btn-sm btn-primary" href="{{ route('admin.order.edit', $meal->id) }}">編輯</a>
 
-                                <form action="/admin/orderlists/{{$orderlist->orderlists_id}}" method="POST" style="display:inline">
+                                <form action="/order/{{$meal->id}}" method="POST" style="display:inline">
                                     @method('DELETE')
                                     @csrf
                                     <button class="btn btn-sm btn-danger" type="submit" onclick="return confirm('是否確認刪除')">刪除</button>
@@ -63,7 +60,6 @@
                 </table>
             </div>
         </div>
-        {{$orderlists->links()}}
     </div>
 
     <!-- /.row -->

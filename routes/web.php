@@ -26,18 +26,23 @@ Route::delete('/cartlist/{id}',[CartController::class,'destroy'])->name('cart.de
 Route::post('/cartend',[CartController::class, 'store'])->name('cart.end');
 
 //管理員路由
-Route::get('welcome', [AdminController::class, 'index'])->name('welcome');
-
+Route::get('welcome', [AdminController::class, 'index'])->name('welcome');//登入畫面
+Route::get('dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard.index');//登入首頁
+//菜單管理
 Route::get('menu', [AdminMenuController::class, 'index'])->name('admin.menu.index');
-Route::get('menu/create', [AdminMenuController::class, 'create'])->name('admin.menu.create');                         //新增餐點
-Route::post('menu/store',[AdminMenuController::class, 'store'])->name('admin.menu.store');                            //儲存餐點
-Route::get('menu/{id}/edit', [AdminMenuController::class, 'edit'])->name('admin.menu.edit');                          //編輯餐點
-Route::patch('menu/{id}',[AdminMenuController::class, 'update'])->name('admin.menu.update');                          //更新餐點
+Route::get('menu/create', [AdminMenuController::class, 'create'])->name('admin.menu.create');
+Route::post('menu/store',[AdminMenuController::class, 'store'])->name('admin.menu.store');
+Route::get('menu/{id}/edit', [AdminMenuController::class, 'edit'])->name('admin.menu.edit');
+Route::patch('menu/{id}',[AdminMenuController::class, 'update'])->name('admin.menu.update');
 Route::delete('menu/{id}',[AdminMenuController::class, 'destroy'])->name('admin.menu.destroy');
-
+//訂單管理
 Route::get('order', [AdminOrderController::class, 'index'])->name('admin.order.index');
+Route::get('order/{id}/edit', [AdminOrderController::class, 'edit'])->name('admin.order.edit');
+Route::patch('order/{id}',[AdminOrderController::class, 'update'])->name('admin.order.update');
+Route::delete('order/{id}',[AdminOrderController::class, 'destroy'])->name('admin.order.destroy');
 
-Route::get('dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard.index');
+
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('admin.dashboard.index');
 })->name('admin.dashboard.index');

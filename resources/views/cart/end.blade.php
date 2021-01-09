@@ -26,7 +26,7 @@
                 <th>餐點編號</th>
                 <th>餐點名稱</th>
                 <th>數量</th>
-                <th>餐點</th>
+                <th>餐點狀態</th>
                 <th class="text-center" width="120">小計</th>
             </tr>
             </thead>
