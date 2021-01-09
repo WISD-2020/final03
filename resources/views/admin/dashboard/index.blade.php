@@ -17,6 +17,12 @@
     </div>
 </div>
 <!-- /.row -->
+<li>
+    <a href="{{ route('admin.menu.index') }}"><i class="fa fa-fw fa-edit"></i>菜單管理</a>
+</li>
+<li>
+    <a href="{{ route('admin.order.index') }}"><i class="fa fa-fw fa-edit"></i>訂單管理</a>
+</li>
 <div class="row">
     <p>&nbsp;</p>
     <p>&nbsp;</p>
