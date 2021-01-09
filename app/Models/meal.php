@@ -19,7 +19,7 @@ class meal extends Model
     ];
     public function cart()
     {
-        $this->hasMany(cart::class);
+        $this->hasMany(detail::class);
     }
     public function order()
     {
