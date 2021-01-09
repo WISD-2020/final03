@@ -27,6 +27,7 @@
             <tr>
                 <th width="20"></th>
                 <th width="100"></th>
+                <th>取餐編號</th>
                 <th>餐點編號</th>
                 <th>名稱</th>
                 <th>數量</th>
@@ -40,23 +41,28 @@
                     @csrf
                     <td class="align-middle"><button type="submit" style="border: 0;background-color: white"><i class="far fa-trash-alt mr-3"></i></button></td>
                 </form>
-                <form action="{{route('cart.store')}}" method="POST" style="display:inline">
+                <form action="{{route('cart.end')}}" method="POST" style="display:inline">
                     @method('post')
                     @csrf
                     <td class="align-middle">
                     </td>
+                    <td class="align-middle "> {{$order->id}}</td>
                     <td class="align-middle "> {{$order->meals_id}}</td>
                     <td class="align-middle "> {{$order->name}}</td>
                     <td class="align-middle">{{$order->quantity}}</td>
                     <td class="align-middle text-right">${{($order->quantity)*($order->price)}}</td>
             </tr>
         @endforeach
-        
+
     </table>
 
     <div class="mt-3 d-flex justify-content-end">
         <button  class="btn btn-secondary mr-2" style="background-color: white" ><a href="{{route('menu.index')}}">繼續選購</a></button>
-
+        <input type="hidden" name="order_id" value="{{$order->id}}">
+        <input type="hidden" name="meals_id" value="{{$order->meals_id}}">
+        <input type="hidden" name="total" value="{{($order->quantity)*($order->price)}}">
+        <input type="hidden" name="name" value="{{$order->name}}">
+        <input type="hidden" name="quantity" value="{{$order->quantity}}">
         <button  type="submit" onclick="return confirm('是否確認結帳?')" class="btn btn-primary">確認付款</button>
     </div>
 @endsection
