@@ -19,7 +19,7 @@
     <!-- /.row -->
     <div class="row" style="margin-bottom: 20px; text-align: right">
         <div class="col-lg-12">
-            <a href="{{ route('admin.menus.create') }}" class="btn btn-success">建立新餐點</a>
+            <a href="{{ route('admin.menu.create') }}" class="btn btn-success">建立新餐點</a>
         </div>
     </div>
     <!-- /.row -->
@@ -32,31 +32,24 @@
                     <tr>
                         <th  style="text-align: center">餐點編號</th>
                         <th >餐點名稱</th>
-                        <th  style="text-align: center">餐點內容</th>
-                        <th  style="text-align: center">圖片位置(大)</th>
-                        <th  style="text-align: center">圖片位置(小)</th>
+                        <th  style="text-align: center">圖片</th>
                         <th  style="text-align: center">價格</th>
-                        <th  style="text-align: center">餐點類別</th>
-                        <th  style="text-align: center">功能</th>
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($menus as $menu)
+                    @foreach($meals as $meal)
                         <tr>
-                            <td style="text-align: center">{{ $menu->id }}</td>
-                            <td>{{$menu->name}}</td>
-                            <td style="text-align: center">{{$menu->detail}}</td>
-                            <td style="text-align: center">{{$menu->img}}</td>
-                            <td style="text-align: center">{{$menu->img2}}</td>
-                            <td style="text-align: center">{{$menu->price}}</td>
-                            <td style="text-align: center">{{$menu->type}}</td>
+                            <td style="text-align: center">{{ $meal->id }}</td>
+                            <td>{{$meal->name}}</td>
+                            <td style="text-align: center">{{$meal->img}}</td>
+                            <td style="text-align: center">{{$meal->price}}</td>
                             <td>
-                                <a class="btn btn-sm btn-primary" href="{{ route('admin.menus.edit', $menu->id) }}">編輯</a>
+                                <a class="btn btn-sm btn-primary" href="{{ route('admin.menu.edit', $meal->id) }}">編輯</a>
 
-                                <form action="/admin/menus/{{$menu->id}}" method="POST" style="display:inline">
+                                <form action="/menu/{{$meal->id}}" method="POST" style="display:inline">
                                     @method('DELETE')
                                     @csrf
-                                    <button class="btn btn-sm btn-danger" type="submit" onclick="return confirm('是否確認刪除')">刪除</button>
+                                    <button class="btn btn-sm btn-danger" type="submit" onclick="return confirm('是否刪除')">刪除</button>
                                 </form>
                             </td>
                         </tr>
@@ -65,7 +58,6 @@
                 </table>
             </div>
         </div>
-        {{$menus->links()}}
     </div>
 
     <!-- /.row -->

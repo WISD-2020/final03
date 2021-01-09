@@ -29,6 +29,11 @@ Route::post('/cartend',[CartController::class, 'store'])->name('cart.end');
 Route::get('welcome', [AdminController::class, 'index'])->name('welcome');
 
 Route::get('menu', [AdminMenuController::class, 'index'])->name('admin.menu.index');
+Route::get('menu/create', [AdminMenuController::class, 'create'])->name('admin.menu.create');                         //新增餐點
+Route::post('menu/store',[AdminMenuController::class, 'store'])->name('admin.menu.store');                            //儲存餐點
+Route::get('menu/{id}/edit', [AdminMenuController::class, 'edit'])->name('admin.menu.edit');                          //編輯餐點
+Route::patch('menu/{id}',[AdminMenuController::class, 'update'])->name('admin.menu.update');                          //更新餐點
+Route::delete('menu/{id}',[AdminMenuController::class, 'destroy'])->name('admin.menu.destroy');
 
 Route::get('order', [AdminOrderController::class, 'index'])->name('admin.order.index');
 
