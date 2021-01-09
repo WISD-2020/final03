@@ -18,7 +18,7 @@ Route::get('/', [HomeController::class, 'index'])->name('menu.index');
 
 Route::post('cartlist',[CartController::class, 'index'])->name('cart.index');
 Route::delete('/cartlist/{id}',[CartController::class,'destroy'])->name('cart.destroy');
-Route::post('/checkout',[CartController::class, 'store'])->name('cart.store');
+Route::post('/cartend',[CartController::class, 'store'])->name('cart.end');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
