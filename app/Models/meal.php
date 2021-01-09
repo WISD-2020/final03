@@ -15,7 +15,6 @@ class meal extends Model
         'quantity',
         'img',
         'price',
-        'type',
     ];
     public function cart()
     {
