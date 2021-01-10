@@ -89,6 +89,38 @@
 
         作為後台管理使用
         
+## 系統復原步驟
+- 在cmder裡使用git clone本專案https://github.com/WISD-2020/final03
+- 開啟uwamp並點選Apache Config，將Wagon*:8000的DocumentRoot指向{DOCUMENTPATH}/final03/public
+- 重新啟動並運行uwamp
+- 透過uwamp開啟PHPMyAdmin
+- 將伺服器的資料設定成以下登入
+  
+  伺服器:localhost:33060
+  
+  帳號:root	
+  
+  密碼:root	
+
+- 進入資料庫後新增一個名為final03的資料庫，並匯入final03.sql
+- 使用phpstorm開啟final03專案      
+- 將.env檔的設定改為如下
+
+  DB_CONNECTION=mysql
+
+  DB_HOST=127.0.0.1
+
+  DB_PORT=33060
+
+  DB_DATABASE=final03
+
+  DB_USERNAME=root
+
+  DB_PASSWORD=root
+
+- 將網頁重新導向http://localhost:8000/並確認開啟成功
+
+
 
 ## 系統測試資料存放位置
     
