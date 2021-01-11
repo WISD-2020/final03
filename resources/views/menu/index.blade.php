@@ -2,7 +2,7 @@
 @section('title', 'Clean Blog')
 @section('content')
     <!-- Page Header -->
-    <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+    <header class="masthead" style="background-image: url('img/mainmeal/food.jpg')">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">

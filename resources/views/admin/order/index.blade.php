@@ -4,7 +4,7 @@
 
 @section('content')
     <!-- Page Heading -->
-    <div class="row">
+    <div class="row" style="text-align:center">
         <div class="col-lg-12">
             <h1 class="page-header">
                 訂單管理 <small>所有訂單列表</small>
