@@ -9,20 +9,8 @@
     <ul class="nav navbar-right top-nav">
         <li class="dropdown">
             <a class="navbar-brand" href="{{ route('admin.menu.index') }}">回到餐點管理</a>
-            <ul class="dropdown-menu">
-                <li>
-                    <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
-                </li>
-                <li class="divider"></li>
-                <li>
-                    <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
-                </li>
+            <a class="navbar-brand" href="{{ route('menu.index') }}">登出管理系統</a>
+
             </ul>
         </li>
     </ul>
