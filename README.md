@@ -48,13 +48,13 @@
 
 ## 系統的主要功能
 ★ 前台
-  - 首頁菜單( Route::get('/', [HomeController::class, 'index'])->name('menu.index')); [3A732033 李譯騏](https://github.com/3A732033)
-  - 購物車 (Route::post('cartlist',[CartController::class, 'index'])->name('cart.index'));[3A732033 李譯騏](https://github.com/3A732033)
+  - 首頁菜單( Route::get('/', [HomeController::class, 'index'])->name('menu.index')); [3A732033 李譯騏](https://github.com/3A732033) [3A732037 董恕澂](https://github.com/3A732037)
+  - 購物車 (Route::post('cartlist',[CartController::class, 'index'])->name('cart.index'));[3A732033 李譯騏](https://github.com/3A732033) 
   - 訂單查詢( Route::post('/cartend',[CartController::class, 'store'])->name('cart.end'));[3A732033 李譯騏](https://github.com/3A732033)
 
 ★ 後台
-  - 餐點管理 (Route::get('menu', [AdminMenuController::class, 'index'])->name('admin.menu.index');) [3A732033 李譯騏](https://github.com/3A732033)
-  - 訂單管理 (Route::get('order', [AdminOrderController::class, 'index'])->name('admin.order.index'); ) [3A732033 李譯騏](https://github.com/3A732033)
+  - 餐點管理 (Route::get('menu', [AdminMenuController::class, 'index'])->name('admin.menu.index');) [3A732033 李譯騏](https://github.com/3A732033) [3A732037 董恕澂](https://github.com/3A732037)
+  - 訂單管理 (Route::get('order', [AdminOrderController::class, 'index'])->name('admin.order.index'); ) [3A732033 李譯騏](https://github.com/3A732033) [3A732037 董恕澂](https://github.com/3A732037)
   
 ## ERD
 ![image](https://i.imgur.com/pLYlDWl.jpg)
@@ -146,5 +146,14 @@
       DB 
       readme 撰寫
       期中報告製作
+      系統測試
+        
+ [3A732037 董恕澂](https://github.com/3A732037)
+    
+      前台介面更改
+      後台功能修復
+      訂單功能更新
+      後台功能更新
+      readme 撰寫
       系統測試
         
