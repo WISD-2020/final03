@@ -9,7 +9,7 @@
     <ul class="nav navbar-right top-nav">
         <li class="dropdown">
             <a class="navbar-brand" href="{{ route('admin.menu.index') }}">回到餐點管理</a>
-            <a class="navbar-brand" href="{{ route('menu.index') }}">登出管理系統</a>
+            <a class="navbar-brand" href="{{ route('menu.index') }}">回到點餐介面</a>
 
             </ul>
         </li>
